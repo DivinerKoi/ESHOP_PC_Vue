@@ -1,0 +1,36 @@
+// 混淆函数
+
+// 处理倍图
+@mixin bg-image ($url) {
+  background-image: url($url + "@2x.png");
+  //@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+  //  background-image: url($url + "@3x.png");
+  //}
+}
+
+// 清除浮动
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// 超出省略号
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+// 多行超出省略号
+@mixin ellipsisLine ($line:2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
